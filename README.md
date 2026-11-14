@@ -1,46 +1,119 @@
-# Portfolio — Ndeye Cisse
+<div align="center">
 
-Site statique (HTML + CSS + JS, zéro dépendance) prêt pour **GitHub Pages**.
+# Ndeye Cisse
+### Administratrice Systèmes, Réseaux & DevOps
 
-## Structure
+Portfolio interactif · Windows Server · Linux · Docker · Kubernetes · CI/CD
+
+**[🌐 Voir le portfolio → cis-debug.github.io](https://cis-debug.github.io)**
+
+[LinkedIn](https://www.linkedin.com/in/ndeye-cy-8a6a8b3ba) · [GitHub](https://github.com/cis-debug) · [E-mail](mailto:ndeye.cisse.96@outlook.com)
+
+</div>
+
+---
+
+## 🎯 À propos
+
+Technicienne supérieure systèmes et réseaux, je recherche un **stage de 6 mois du 23 avril au 22 octobre 2027** en administration systèmes, réseaux et DevOps (Île-de-France).
+
+Ce dépôt contient le code de mon portfolio. Je l'ai pensé comme une infrastructure : un terminal pour le visiter, mon parcours présenté comme un pipeline CI/CD, et une supervision simulée. L'objectif est de montrer mes compétences techniques, mais aussi ma façon de travailler.
+
+## ✨ Ce que contient le site
+
+| Section | Contenu |
+|---|---|
+| **Accueil** | Présentation, compte à rebours jusqu'à ma disponibilité, CV à télécharger |
+| **Terminal** | Un vrai mini-terminal : `help`, `whoami`, `skills`, `projects`, `neofetch`, `sudo hire-me`… (historique ↑↓, complétion avec Tab) |
+| **Parcours** | Ma formation sous forme de pipeline CI/CD (Build → Test → Deploy → Monitor), rejouable |
+| **Compétences** | Systèmes & Réseaux, DevOps & Cloud, Scripting, Sécurité, Outils : chaque outil indique où je l'ai utilisé |
+| **Projets** | Infrastructure Windows Server, projet DevOps (CI/CD, Docker, Kubernetes), supervision Grafana/Prometheus, projets Cisco & OpenClassrooms, avec schémas d'architecture en ASCII |
+| **Mini-supervision** | Courbes CPU / RAM / requêtes et statut des services, avec un bouton « Simuler une panne » (simulation, pas de vraies données) |
+| **Soft skills** | Cartes à retourner et mini-jeu de gestion d'incident |
+| **Contact** | E-mail, LinkedIn, GitHub, formulaire qui ouvre la messagerie |
+
+**Et aussi** : version **française / anglaise**, thème clair / sombre, palette de commandes (`Ctrl + K`), fond animé, et quelques surprises cachées (essayez le code Konami ↑↑↓↓←→←→BA).
+
+## 🛠️ Technologies
+
+- **HTML5, CSS3, JavaScript** : sans framework, sans build, sans dépendance
+- **Canvas** pour le fond animé et les courbes de supervision
+- **Google Fonts** : Space Grotesk et JetBrains Mono
+- **GitHub Pages** pour l'hébergement
+
+## 📁 Structure du projet
 
 ```
 .
-├── index.html
-├── style.css
-├── script.js
+├── index.html                 # Structure de la page et textes en français
+├── style.css                  # Design, thèmes clair/sombre, responsive
+├── script.js                  # Interactions, données bilingues, dictionnaire anglais
+├── README.md
 └── assets/
-    ├── avatar.png            # votre illustration
-    └── CV_Ndeye_Cisse.pdf    # votre CV (bouton « Télécharger »)
+    ├── avatar.png             # Mon illustration
+    └── CV_Ndeye_Cisse.pdf     # Mon CV (bouton « Télécharger mon CV »)
 ```
 
-## Personnaliser (2 minutes)
+## 🚀 Lancer le site en local
 
-Ouvrez `script.js`, bloc `CONFIG` tout en haut :
+Aucune installation n'est nécessaire. Depuis le dossier du projet :
 
-- `linkedin` et `github` : déjà renseignés (les boutons « Code sur GitHub » pointent vers votre profil ; remplacez-les par les liens de vrais dépôts si vous voulez)
-- `email`, `phone`, dates de disponibilité : déjà remplis d'après votre CV
+```bash
+python3 -m http.server 8000
+```
 
-**FR / EN** : le texte français est dans `index.html` (attributs `data-i18n`), l'anglais dans le dictionnaire `EN` de `script.js`. Le bouton « EN / FR » en haut à droite change la langue (mémorisée dans le navigateur).
+Puis ouvrez http://localhost:8000 dans votre navigateur.
 
-Les textes des compétences, projets et soft skills sont aussi dans `script.js` (`SKILLS`, `PROJECTS`, `SOFT`, `STAGES`, `GAME`).
-Relisez les **soft skills** et le contenu des **compétences** : ils sont à votre image si vous les reformulez avec vos propres mots.
+## ✏️ Personnaliser
 
-## Publier sur GitHub Pages
+**Mes informations** : le bloc `CONFIG`, tout en haut de `script.js`, contient l'e-mail, le téléphone, les liens LinkedIn et GitHub, les dates de disponibilité et le chemin du CV.
 
-1. Créez un dépôt public nommé `votre-pseudo.github.io` (URL : `https://votre-pseudo.github.io`) ou n'importe quel nom (URL : `https://votre-pseudo.github.io/nom-du-depot`).
-2. Déposez-y tous les fichiers (en gardant le dossier `assets/`).
-3. Dépôt → **Settings → Pages → Build and deployment** : Source `Deploy from a branch`, branche `main`, dossier `/ (root)` → **Save**.
-4. Attendez 1 à 2 minutes : le site est en ligne.
+**Les contenus** : dans `script.js`, les tableaux `STAGES` (parcours), `SKILLS` (compétences), `PROJECTS` (projets), `SOFT` (soft skills) et `GAME` (mini-jeu) regroupent les textes en français et en anglais.
 
-En local : `python3 -m http.server 8000` puis http://localhost:8000.
+**Les couleurs** : elles sont définies au début de `style.css`.
 
-## Fonctionnalités à montrer en entretien
+| Variable | Rôle |
+|---|---|
+| `--accent` | Lavande, couleur principale |
+| `--accent2` | Corail, couleur secondaire (numéros de sections, détails, terminal) |
+| `--mint` | Vert, réservé à la pastille de disponibilité |
 
-- Terminal interactif (`help`, `skills`, `neofetch`, `sudo hire-me`, historique ↑↓, Tab)
-- Parcours présenté comme un pipeline CI/CD rejouable
-- Compétences par catégorie, avec le contexte d'utilisation
-- Mini-supervision simulée (Grafana-like) avec bouton « panne »
-- Mini-jeu de gestion d'incident
-- Palette de commandes `Ctrl + K`, thème clair/sombre, code Konami
-- Accessible (clavier, `prefers-reduced-motion`) et responsive
+**Le CV** : remplacez le fichier `assets/CV_Ndeye_Cisse.pdf` en gardant le même nom.
+
+## 🌍 Version française / anglaise
+
+Le texte français est écrit directement dans `index.html` (attributs `data-i18n`). Les traductions anglaises sont dans le dictionnaire `EN` de `script.js`, et les contenus dynamiques utilisent des paires français / anglais. Le bouton **EN / FR** en haut à droite change la langue, et le choix est mémorisé dans le navigateur.
+
+Pour ajouter ou modifier un texte, changez-le dans `index.html`, puis son équivalent anglais dans `EN` avec la même clé.
+
+## 🌐 Déploiement sur GitHub Pages
+
+1. Le dépôt s'appelle `cis-debug.github.io` : pour une page personnelle, le nom doit être `pseudo.github.io`.
+2. Dans **Settings → Pages → Build and deployment**, choisir **Deploy from a branch**.
+3. Sélectionner la branche **main** et le dossier **/ (root)**, puis **Save**.
+4. Après une à deux minutes, le site est en ligne sur https://cis-debug.github.io.
+
+Chaque `git push` sur la branche `main` met le site à jour automatiquement.
+
+## ♿ Accessibilité et performances
+
+- Navigation complète au clavier, lien « Aller au contenu », focus visible
+- Respect de `prefers-reduced-motion` (animations réduites)
+- Affichage adapté du mobile au grand écran
+- Aucune bibliothèque externe : chargement rapide
+
+## 📬 Contact
+
+- **E-mail** : [ndeye.cisse.96@outlook.com](mailto:ndeye.cisse.96@outlook.com)
+- **LinkedIn** : [ndeye-cy-8a6a8b3ba](https://www.linkedin.com/in/ndeye-cy-8a6a8b3ba)
+- **GitHub** : [cis-debug](https://github.com/cis-debug)
+
+---
+
+<div align="center">
+
+© 2026 Ndeye Cisse · Tous droits réservés
+
+*Fait à la main, en HTML, CSS et JavaScript.*
+
+</div>
