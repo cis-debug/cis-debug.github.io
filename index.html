@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="fr" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ndeye Cisse — Administratrice Systèmes, Réseaux & DevOps</title>
+  <meta name="description" content="Portfolio de Ndeye Cisse, administratrice systèmes, réseaux & DevOps (Windows Server, Linux, Docker, Kubernetes, CI/CD). Recherche un stage de 6 mois du 23/04 au 22/10/2027.">
+  <meta name="theme-color" content="#0b0a12">
+  <meta property="og:title" content="Ndeye Cisse — Administratrice Systèmes, Réseaux & DevOps">
+  <meta property="og:description" content="Infrastructures fiables, supervisées et automatisées. Portfolio interactif.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='28' fill='%23a78bfa'/%3E%3Ctext x='50' y='66' font-size='48' text-anchor='middle' font-family='monospace' font-weight='700' fill='%230b0a12'%3E%26gt%3B_%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script>
+    try { const t = localStorage.getItem('theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+  </script>
+</head>
+<body>
+  <!-- Le texte français est écrit ici ; les traductions anglaises sont dans script.js (dictionnaire EN). -->
+  <canvas id="bg" aria-hidden="true"></canvas>
+  <canvas id="matrix" aria-hidden="true"></canvas>
+  <div class="glow" aria-hidden="true"></div>
+  <div class="progress" aria-hidden="true"><span id="progress"></span></div>
+  <a class="skip" href="#main" data-i18n="skip">Aller au contenu</a>
+
+  <header class="nav" id="nav">
+    <a class="logo" href="#accueil" aria-label="Accueil" data-i18n-aria="aria_home"><span>&gt;_</span> ndeye.cisse</a>
+    <nav id="menu" aria-label="Navigation principale" data-i18n-aria="aria_main_nav">
+      <a href="#terminal" data-i18n="nav_terminal">Terminal</a>
+      <a href="#parcours" data-i18n="nav_path">Parcours</a>
+      <a href="#competences" data-i18n="nav_skills">Compétences</a>
+      <a href="#projets" data-i18n="nav_projects">Projets</a>
+      <a href="#soft" data-i18n="nav_soft">Soft skills</a>
+      <a href="#contact" data-i18n="nav_contact">Contact</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="kbd-btn" id="openPalette" aria-label="Ouvrir la palette de commandes" data-i18n-aria="aria_palette">Ctrl&nbsp;K</button>
+      <button class="icon-btn lang-btn" id="langBtn" aria-label="Changer de langue" data-i18n-aria="aria_lang">EN</button>
+      <button class="icon-btn" id="themeBtn" aria-label="Changer de thème" data-i18n-aria="aria_theme">◐</button>
+      <button class="icon-btn burger" id="burger" aria-label="Menu" aria-expanded="false" data-i18n-aria="aria_menu">☰</button>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero" id="accueil">
+      <div class="hero-text">
+        <p class="pill"><i class="dot"></i> <span data-i18n="hero_pill">Disponible du 23/04 au 22/10/2027 · stage de 6 mois</span></p>
+        <h1><span class="glitch" data-text="Ndeye">Ndeye</span> <span class="grad">Cisse</span></h1>
+        <p class="role"><span class="prompt">$</span> <span id="typed"></span><span class="caret">▍</span></p>
+        <p class="lead" data-i18n="hero_lead">
+          Administratrice Systèmes, Réseaux. Je mets mes acquis <strong>Windows Server, Linux, Docker, Kubernetes et CI/CD</strong>
+          au service de la <strong>fiabilité</strong>, de la <strong>supervision</strong> et de l'<strong>automatisation</strong> de vos infrastructures.
+        </p>
+        <div class="cta">
+          <a class="btn primary" href="#projets" data-i18n="cta_projects">Voir mes projets →</a>
+          <a class="btn" href="assets/CV_Ndeye_Cisse.pdf" download data-i18n="cta_cv">Télécharger mon CV</a>
+          <a class="btn ghost" href="#terminal" data-i18n="cta_term">Essayer le terminal</a>
+        </div>
+        <div class="countdown" id="countdown" aria-live="off">
+          <div><b id="cdD">--</b><small data-i18n="cd_days">jours</small></div>
+          <div><b id="cdH">--</b><small data-i18n="cd_hours">heures</small></div>
+          <div><b id="cdM">--</b><small data-i18n="cd_min">min</small></div>
+          <div><b id="cdS">--</b><small data-i18n="cd_sec">sec</small></div>
+          <p id="cdLabel">avant ma disponibilité</p>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="orbit" aria-hidden="true">
+          <span style="--a:0deg"><i>🐳 Docker</i></span>
+          <span style="--a:72deg"><i>☸ K8s</i></span>
+          <span style="--a:144deg"><i>🐧 Linux</i></span>
+          <span style="--a:216deg"><i>⚙ CI/CD</i></span>
+          <span style="--a:288deg"><i>☁ AWS·Azure</i></span>
+        </div>
+        <div class="avatar">
+          <img src="assets/avatar.png" alt="Illustration de Ndeye Cisse"
+               onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'avatar-fallback',textContent:'NC'}))">
+        </div>
+      </div>
+      <a class="scroll-hint" href="#terminal" aria-label="Descendre" data-i18n-aria="aria_down">↓</a>
+    </section>
+
+    <!-- TERMINAL -->
+    <section id="terminal" class="section reveal">
+      <h2><span class="num">01</span> <span data-i18n="h_terminal">Le terminal</span></h2>
+      <p class="sub" data-i18n="s_terminal">Un portfolio d'admin sys, ça se visite en ligne de commande. Tapez <code>help</code> (ou cliquez sur une suggestion).</p>
+      <div class="term" id="term">
+        <div class="term-bar"><i></i><i></i><i></i><span>ndeye@portfolio:~</span></div>
+        <div class="term-body" id="termOut" role="log" aria-live="polite"></div>
+        <form class="term-in" id="termForm" autocomplete="off">
+          <label for="termInput" class="prompt">ndeye@portfolio:~$</label>
+          <input id="termInput" type="text" spellcheck="false" autocapitalize="off" aria-label="Commande" data-i18n-aria="aria_cmd">
+        </form>
+      </div>
+      <div class="chips-row" id="termSugg"></div>
+    </section>
+
+    <!-- PARCOURS -->
+    <section id="parcours" class="section reveal">
+      <h2><span class="num">02</span> <span data-i18n="h_path">Mon parcours, en pipeline CI/CD</span></h2>
+      <p class="sub" data-i18n="s_path">Chaque étape de ma formation est un stage du pipeline. Cliquez sur une étape ou lancez-le.</p>
+      <div class="pipe">
+        <div class="pipe-track"><span id="pipeFill"></span></div>
+        <div class="stages" id="stages"></div>
+      </div>
+      <div class="pipe-panel">
+        <div class="card" id="stageDetail" aria-live="polite"></div>
+        <div class="log" id="pipeLog" aria-label="Journal du pipeline" data-i18n-aria="aria_log"></div>
+      </div>
+      <button class="btn" id="replay" data-i18n="replay">▶ Lancer le pipeline</button>
+    </section>
+
+    <!-- COMPETENCES -->
+    <section id="competences" class="section reveal">
+      <h2><span class="num">03</span> <span data-i18n="h_skills">Compétences techniques</span></h2>
+      <p class="sub" data-i18n="s_skills">Choisissez une catégorie, puis cliquez sur un outil pour voir où je l'ai utilisé.</p>
+      <div class="tabs" id="tabs" role="tablist"></div>
+      <div class="skills-grid">
+        <div class="chips" id="chips"></div>
+        <aside class="card inspector" id="inspector" aria-live="polite"></aside>
+      </div>
+      <div class="lang-row">
+        <div class="card lang"><b data-i18n="lang_it">🇮🇹 Italien</b><span class="lvl">C2</span></div>
+        <div class="card lang"><b data-i18n="lang_en">🇬🇧 Anglais</b><span class="lvl">B2</span></div>
+        <div class="card lang"><b data-i18n="lang_bm">🌍 Bambara</b><span class="lvl">C2</span></div>
+      </div>
+    </section>
+
+    <!-- PROJETS -->
+    <section id="projets" class="section reveal">
+      <h2><span class="num">04</span> <span data-i18n="h_projects">Projets techniques</span></h2>
+      <p class="sub" data-i18n="s_projects">Les architectures sont dessinées en ASCII, comme dans une vraie doc d'infra.</p>
+      <div class="filters" id="filters"></div>
+      <div class="projects" id="projects"></div>
+
+      <div class="monitor card" id="monitor">
+        <div class="mon-head">
+          <h3><span data-i18n="mon_title">📈 Mini-supervision</span> <small data-i18n="mon_small">(simulation, pas de vraies données)</small></h3>
+          <button class="btn small" id="breakBtn" data-i18n="mon_break">💥 Simuler une panne</button>
+        </div>
+        <div class="mon-grid">
+          <div><span>CPU</span><canvas id="spCpu" width="300" height="70"></canvas><b id="vCpu">0%</b></div>
+          <div><span>RAM</span><canvas id="spRam" width="300" height="70"></canvas><b id="vRam">0%</b></div>
+          <div><span data-i18n="mon_req">Requêtes/s</span><canvas id="spReq" width="300" height="70"></canvas><b id="vReq">0</b></div>
+        </div>
+        <ul class="services" id="services"></ul>
+        <p class="alert" id="alertMsg" role="status" data-i18n="mon_ok">Tous les services sont opérationnels.</p>
+      </div>
+    </section>
+
+    <!-- SOFT SKILLS -->
+    <section id="soft" class="section reveal">
+      <h2><span class="num">05</span> <span data-i18n="h_soft">Soft skills</span></h2>
+      <p class="sub" data-i18n="s_soft">Retournez les cartes, puis testez-vous face à un incident à 2h du matin.</p>
+      <div class="flips" id="flips"></div>
+
+      <div class="card game" id="game">
+        <h3 data-i18n="game_title">🚨 Mini-jeu : gestion d'incident</h3>
+        <div id="gameBody"></div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section reveal">
+      <h2><span class="num">06</span> <span data-i18n="h_contact">Travaillons ensemble</span></h2>
+      <p class="sub" data-i18n="s_contact">Je cherche un stage de 6 mois (du 23 avril au 22 octobre 2027), en Île-de-France, comme administratrice systèmes, réseaux & DevOps.</p>
+      <div class="contact-grid">
+        <div class="card">
+          <ul class="contact-list">
+            <li><span>✉</span><a id="mailLink" href="mailto:ndeye.cisse.96@outlook.com">ndeye.cisse.96@outlook.com</a><button class="copy" data-copy="ndeye.cisse.96@outlook.com" data-i18n="copy">copier</button></li>
+            <li><span>☎</span><a href="tel:+33753575364">07 53 57 53 64</a><button class="copy" data-copy="07 53 57 53 64" data-i18n="copy">copier</button></li>
+            <li><span>in</span><a id="linkedin" href="https://www.linkedin.com/in/ndeye-cy-8a6a8b3ba" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><span>⌥</span><a id="github" href="https://github.com/cis-debug" target="_blank" rel="noopener">GitHub</a></li>
+            <li><span>⌖</span><div data-i18n="loc">Île-de-France</div></li>
+          </ul>
+        </div>
+        <form class="card form" id="mailForm">
+          <label><span data-i18n="f_name">Votre nom</span><input name="name" required></label>
+          <label><span data-i18n="f_company">Entreprise</span><input name="company"></label>
+          <label><span data-i18n="f_msg">Message</span><textarea name="msg" rows="4" required></textarea></label>
+          <button class="btn primary" type="submit" data-i18n="f_send">Envoyer par e-mail →</button>
+          <small data-i18n="f_note">Ouvre votre application de messagerie (aucune donnée n'est stockée).</small>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© <span id="year"></span> Ndeye Cisse · <span data-i18n="foot_made">Fait à la main avec HTML, CSS et JS · hébergé sur GitHub Pages</span></p>
+    <p class="hint" data-i18n="foot_hint">Astuce : essayez le code Konami ↑↑↓↓←→←→BA</p>
+  </footer>
+
+  <!-- Palette de commandes -->
+  <dialog id="palette" aria-label="Palette de commandes" data-i18n-aria="aria_palette_dlg">
+    <input id="palInput" placeholder="Tapez une commande… (aller à, thème, CV…)" aria-label="Rechercher une action" data-i18n-ph="pal_ph" data-i18n-aria="aria_search">
+    <ul id="palList" role="listbox"></ul>
+  </dialog>
+
+  <div class="toast" id="toast" role="status"></div>
+  <script src="script.js"></script>
+</body>
+</html>
